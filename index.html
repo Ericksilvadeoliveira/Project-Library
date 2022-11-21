@@ -6,29 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Library</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+    <script>
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential)
+            console.log(data)
+
+            title.value = data.name
+            console.log(title.textContent)
+        }
+
+        window.onload = function () {
+          google.accounts.id.initialize({
+            client_id: "861645918548-e0jjknqa00c31e3ckg0tng59o9n9bcbn.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { 
+                theme: "filled_black", 
+                size: "large",
+                type: "standard",
+                shape: "pill",
+                text: "${button.text}",
+                locale: "en",
+                logo_alignment: "left",
+                width: "100"
+            }  // customization attributes
+          );
+          google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+    </script>
+
 </head>
 <body>
     <header>
-        <div class="title">My Library</div>
+        <h1>My Library</h1>
+        <div id="buttonDiv"></div> 
     </header>
 
-    <div>
+    <main class="main-container" id="main">
         <button class="add-book">+ Add Book</button>
-    </div>
-
-    <form action="#" id="form-book">
-        <title>Add new book</title>
-        <input type="text" name="title" id="title" placeholder="Title" required>
-
-        <input type="text" name="author" id="author" placeholder="Author" required>
-
-        <input type="number" name="pages" id="pages" placeholder="Pages" required>
-
-        <label for="read">Have you read it?</label>
-        <input type="checkbox" name="read" id="read" required>
-
-        <input type="button" value="submit">
-    </form>
+        <div class="bookcase"></div>
+        <div id="form-content">
+            <form id="form-book">
+                <legend><strong>Add new book</strong></legend>
+                <input type="text" name="title" id="title" placeholder="Title" required>
+                <input type="text" name="author" id="author" placeholder="Author" required>
+                <input type="number" name="pages" id="pages" placeholder="Pages" required>
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" name="read" id="read" required>
+                <button id="button-submit">Submit</button>
+            </form>
+        </div>
+    </main>
 </body>
 <script src="js-file.js"></script>
 </html>

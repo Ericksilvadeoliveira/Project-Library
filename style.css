@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    --background: #00747C;
+    --color2: #00BBC9;
+    --text1: #CACACA;
+    --text2: #202022;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.add-book {
+    border: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: white;
+}
+
+.add-book:hover {
+    background-color: var(--text1);
+    cursor: pointer;
+}
+
+.bookcase {
+    display: none;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#form-content {
+    display: block;
+}
+
+#form-book {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--color2);
+    color: var(--text2);
+}
+
+#form-book input {
+    border: transparent;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#button-submit {
+    border: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: white;
+}
+
+#button-submit:hover {
+    background-color: var(--text1);
+    cursor: pointer;
+}
+
