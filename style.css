@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
     --background: #00747C;
     --color2: #00BBC9;
@@ -10,10 +8,21 @@
     --text2: #202022;
 }
 
-body {
+body, html {
     background-color: var(--background);
+    margin: 0;
+    padding: 0;
 }
 
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: var(--color2);
+    margin-bottom: 32px;
+}
 .add-book {
     border: transparent;
     border-radius: 8px;
@@ -27,7 +36,7 @@ body {
 }
 
 .bookcase {
-    display: none;
+    display: block;
 }
 
 .main-container {
@@ -40,7 +49,7 @@ body {
 }
 
 #form-content {
-    display: block;
+    display: none;
 }
 
 #form-book {
