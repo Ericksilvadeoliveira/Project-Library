@@ -12,7 +12,7 @@ class book {
         title = '',
         author = '',
         pages = '',
-        read = false
+        read = off
     ) {
        this.title = title
        this.author = author
@@ -22,28 +22,27 @@ class book {
 }
 
 const bookcase = document.querySelector('.bookcase');
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const pages = document.querySelector('#pages');
-const read = document.querySelector('#read');
+const $title = document.querySelector('#title');
+const $author = document.querySelector('#author');
+const $pages = document.querySelector('#pages');
+const $read = document.querySelector('#read');
 
 function addBookToLibrary() {
-    const newBook = '';
-    newBook.textContent = new book(title, author, pages, read);
-    newBook.appendChild(bookcase);
+
 }
 
-const btnSubmit = document.querySelector('#button-submit');
+const btnSubmit = document.getElementById('button-submit')
+const test = document.querySelector('.test')
 
 btnSubmit.addEventListener("click", ()=> {
-    const p = 'gol';
-    p.appendChild(bookcase);
+    formArea.style.display = 'none';
+    
 })
 
 addBook.addEventListener("click", ()=> {
     if (formArea.style.display === 'none') {
-        formArea.style.display = 'block';
         const exForm = document.getElementById('form-book')
+        formArea.style.display = 'block';
         exForm.style.width = '300px';
         exForm.style.height = '300px';
         exForm.style.flexDirection = 'column';
