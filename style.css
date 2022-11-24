@@ -35,10 +35,6 @@ header {
     cursor: pointer;
 }
 
-.bookcase {
-    display: block;
-}
-
 .main-container {
     width: 100%;
     display: flex;
@@ -46,6 +42,42 @@ header {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.bookcase {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 250px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 8px;
+}
+
+.book-info {
+    margin: 0;
+    padding: 2px;
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.book-card p {
+    margin: 0;
+    padding: 2px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 240px;
+    font-size: 12px;
 }
 
 #form-content {

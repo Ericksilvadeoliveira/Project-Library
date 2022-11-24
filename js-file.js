@@ -21,7 +21,7 @@ class book {
     }
 }
 
-const bookcase = document.querySelector('.bookcase');
+//Form input
 const $title = document.querySelector('#title');
 const $author = document.querySelector('#author');
 const $pages = document.querySelector('#pages');
@@ -32,11 +32,26 @@ function addBookToLibrary() {
 }
 
 const btnSubmit = document.getElementById('button-submit')
-const test = document.querySelector('.test')
+
+
+const bookcase = document.querySelector('.bookcase');
+const bookTitle = document.querySelector('.book-title');
+const bookAuthor = document.querySelector('.book-author');
+const bookPages = document.querySelector('.book-pages');
+const bookRead = document.querySelector('.book-read');
 
 btnSubmit.addEventListener("click", ()=> {
     formArea.style.display = 'none';
-    
+    bookTitle.innerHTML = document.querySelector('#title').value;
+    bookAuthor.innerHTML = document.querySelector('#author').value;
+    bookPages.innerHTML = document.querySelector('#pages').value;
+    bookRead.innerHTML = document.querySelector('#read').value;
+    if (document.querySelector('#read').value === 'n') {
+        bookRead.innerHTML = 'Lido';
+    } if (document.querySelector('#read').value === 'on') {
+        bookRead.innerHTML = 'Não Lido';
+    }
+    console.log(document.querySelector('#read').value)
 })
 
 addBook.addEventListener("click", ()=> {
