@@ -1,18 +1,14 @@
 const formArea = document.querySelector("#form-content");
 const addBook = document.querySelector(".add-book");
 
- class myLibrary {
-    constructor() {
-       this.books = [];
-    }
-}
+let myLibrary = []
 
 class book {
     constructor(
-        title = '',
-        author = '',
-        pages = '',
-        read = off
+        title,
+        author,
+        pages,
+        read
     ) {
        this.title = title
        this.author = author
@@ -22,27 +18,29 @@ class book {
 }
 
 //Form input
-const title = document.querySelector('#title').value;
-const author = document.querySelector('#author').value;
-const pages = document.querySelector('#pages').value;
-const read = document.querySelector('#read').value;
+const Ftitle = document.querySelector('#title').textContent;
+const Fauthor = document.querySelector('#author').textContent;
+const Fpages = document.querySelector('#pages').textContent;
+const Fread = document.querySelector('#read').textContent;
+
+function pega() {
+    const newBook = new book(Ftitle, Fauthor, Fpages, Fread);
+    console.log(newBook)
+}
 
 function addBookToLibrary() {
 
+    const bookcase = document.querySelector('.bookcase');
+    const bookTitle = document.querySelector('.book-title');
+    const bookAuthor = document.querySelector('.book-author');
+    const bookPages = document.querySelector('.book-pages');
+    const bookRead = document.querySelector('.book-read');
 }
 
 const btnSubmit = document.getElementById('button-submit')
 
-
-const bookcase = document.querySelector('.bookcase');
-const bookTitle = document.querySelector('.book-title');
-const bookAuthor = document.querySelector('.book-author');
-const bookPages = document.querySelector('.book-pages');
-const bookRead = document.querySelector('.book-read');
-
-btnSubmit.addEventListener("click", (e)=> {
-    formArea.style.display = 'none';
-    bookTitle.textContent = new book('$title', '$author', '$pages', '$read');
+btnSubmit.addEventListener("click", ()=> {
+    return addBookToLibrary();
 })
 
 addBook.addEventListener("click", ()=> {

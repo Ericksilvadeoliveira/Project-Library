@@ -52,6 +52,9 @@ header {
     align-items: center;
 }
 
+.display {
+    
+}
 .book-card {
     background-color: white;
     display: flex;
@@ -70,6 +73,7 @@ header {
     justify-content: left;
     align-items: center;
 }
+
 .book-card p {
     margin: 0;
     padding: 2px;
