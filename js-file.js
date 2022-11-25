@@ -22,10 +22,10 @@ class book {
 }
 
 //Form input
-const $title = document.querySelector('#title').value;
-const $author = document.querySelector('#author').value;
-const $pages = document.querySelector('#pages').value;
-const $read = document.querySelector('#read').value;
+const title = document.querySelector('#title').value;
+const author = document.querySelector('#author').value;
+const pages = document.querySelector('#pages').value;
+const read = document.querySelector('#read').value;
 
 function addBookToLibrary() {
 
@@ -40,7 +40,7 @@ const bookAuthor = document.querySelector('.book-author');
 const bookPages = document.querySelector('.book-pages');
 const bookRead = document.querySelector('.book-read');
 
-btnSubmit.addEventListener("click", ()=> {
+btnSubmit.addEventListener("click", (e)=> {
     formArea.style.display = 'none';
     bookTitle.textContent = new book('$title', '$author', '$pages', '$read');
 })
