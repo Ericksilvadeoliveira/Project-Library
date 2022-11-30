@@ -1,15 +1,10 @@
 const formArea = document.querySelector("#form-content");
 const addBook = document.querySelector(".add-book");
 
-let myLibrary = []
+const myLibrary = []
 
 class book {
-    constructor(
-        title,
-        author,
-        pages,
-        read
-    ) {
+    constructor(title, author, pages, read) {
        this.title = title
        this.author = author
        this.pages = pages
@@ -17,31 +12,32 @@ class book {
     }
 }
 
-//Form input
-const Ftitle = document.querySelector('#title').textContent;
-const Fauthor = document.querySelector('#author').textContent;
-const Fpages = document.querySelector('#pages').textContent;
-const Fread = document.querySelector('#read').textContent;
-
 function pega() {
-    const newBook = new book(Ftitle, Fauthor, Fpages, Fread);
-    console.log(newBook)
-}
+    const Ftitle = document.querySelector('#title').value;
+    const Fauthor = document.querySelector('#author').value;
+    const Fpages = document.querySelector('#pages').value;
+    const Fread = document.querySelector('#read');
 
-function addBookToLibrary() {
+    if (Fread.checked) {
+        Fread.value = 'lido'
+    } else {
+        Fread.value = 'Não lido'
+    }
+
+    const inputRead = Fread.value;
+
+    const newBook = new book(Ftitle, Fauthor, Fpages, inputRead)
 
     const bookcase = document.querySelector('.bookcase');
     const bookTitle = document.querySelector('.book-title');
     const bookAuthor = document.querySelector('.book-author');
     const bookPages = document.querySelector('.book-pages');
     const bookRead = document.querySelector('.book-read');
-}
 
-const btnSubmit = document.getElementById('button-submit')
-
-btnSubmit.addEventListener("click", ()=> {
-    return addBookToLibrary();
-})
+    bookTitle.innerHTML = newBook.title
+    myLibrary.push(newBook)
+    console.log(myLibrary)
+};
 
 addBook.addEventListener("click", ()=> {
     if (formArea.style.display === 'none') {
