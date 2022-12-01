@@ -29,14 +29,20 @@ function pega() {
     const newBook = new book(Ftitle, Fauthor, Fpages, inputRead)
 
     const bookcase = document.querySelector('.bookcase');
+    const displayCard = document.querySelector('.display');
     const bookTitle = document.querySelector('.book-title');
     const bookAuthor = document.querySelector('.book-author');
     const bookPages = document.querySelector('.book-pages');
     const bookRead = document.querySelector('.book-read');
 
-    bookTitle.innerHTML = newBook.title
-    myLibrary.push(newBook)
-    console.log(myLibrary)
+    bookTitle.innerHTML = newBook.title;
+    bookAuthor.innerHTML = newBook.author;
+    bookPages.innerHTML = newBook.pages;
+    bookRead.innerHTML = newBook.read;
+
+    displayCard.style.display = 'block'
+
+    formArea.style.display = 'none'
 };
 
 addBook.addEventListener("click", ()=> {

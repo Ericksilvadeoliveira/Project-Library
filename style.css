@@ -53,7 +53,7 @@ header {
 }
 
 .display {
-    
+    display: none;
 }
 .book-card {
     background-color: white;
